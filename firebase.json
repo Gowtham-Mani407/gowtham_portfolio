@@ -1,0 +1,41 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "gowtham-portfolio-91637",
+          "appId": "1:691154773831:android:b92a50d802e7bb56f70e62",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "gowtham-portfolio-91637",
+          "configurations": {
+            "android": "1:691154773831:android:b92a50d802e7bb56f70e62",
+            "ios": "1:691154773831:ios:10a4b080196c1402f70e62",
+            "macos": "1:691154773831:ios:10a4b080196c1402f70e62",
+            "web": "1:691154773831:web:61c231505117c8edf70e62",
+            "windows": "1:691154773831:web:b2e4982155777a0bf70e62"
+          }
+        }
+      }
+    }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint"
+      ]
+    }
+  ]
+}

@@ -1,12 +1,13 @@
+import 'dart:html' as html;
+
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:gowtham_portfolio/core/animations/jumpingtext.dart';
 import 'package:gowtham_portfolio/core/theme/apptextstyle.dart';
 import 'package:gowtham_portfolio/core/utils/scrollhelper.dart';
 import 'package:gowtham_portfolio/core/widgets/customtext.dart';
-import 'package:gowtham_portfolio/core/widgets/fadeonscroll.dart';
+import 'package:gowtham_portfolio/features/home/data/porfolioservice.dart';
 import 'package:gowtham_portfolio/features/home/presentation/screens/home.dart';
-import 'package:gowtham_portfolio/features/projects/presentation/widgets/project_sec_wid.dart';
 
 class HeroSectionWidget extends StatelessWidget {
   const HeroSectionWidget({super.key});
@@ -130,7 +131,7 @@ class HeroSectionWidget extends StatelessWidget {
 
                       Row(
                         children: [
-                          ElevatedButton(
+                          ElevatedButton.icon(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFF38BDF8),
                               foregroundColor: Colors.white,
@@ -142,13 +143,45 @@ class HeroSectionWidget extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(12),
                               ),
                             ),
-                            onPressed: () {},
-                            child: const Text("Download Resume"),
+                            onPressed: () async {
+                              final url = await PortfolioService()
+                                  .getResumeUrl();
+
+                              // Open PDF in browser tab
+                              html.window.open(url, '_blank');
+                            },
+                            icon: const Icon(Icons.visibility_outlined),
+                            label: const Text("View Resume"),
                           ),
 
-                          const SizedBox(width: 20),
+                          const SizedBox(width: 16),
 
-                          OutlinedButton(
+                          ElevatedButton.icon(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFF0EA5E9),
+                              foregroundColor: Colors.white,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 28,
+                                vertical: 18,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            onPressed: () async {
+                              final url = await PortfolioService()
+                                  .getResumedowloadUrl();
+
+                              html.window.open(url, '_self');
+                            },
+                            icon: const Icon(Icons.download_rounded),
+                            label: const Text("Download Resume"),
+                          ),
+
+                          const SizedBox(width: 16),
+
+                          /// Contact Me
+                          OutlinedButton.icon(
                             style: OutlinedButton.styleFrom(
                               foregroundColor: Colors.white,
                               side: const BorderSide(color: Colors.white30),
@@ -163,7 +196,8 @@ class HeroSectionWidget extends StatelessWidget {
                             onPressed: () {
                               ScrollHelper.scrollTo(contactKey);
                             },
-                            child: const Text("Contact Me"),
+                            icon: const Icon(Icons.mail_outline),
+                            label: const Text("Contact Me"),
                           ),
                         ],
                       ),
