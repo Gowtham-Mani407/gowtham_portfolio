@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gowtham_portfolio/core/widgets/customTextField.dart';
 import 'package:gowtham_portfolio/features/contact/presentation/bloc/contact_bloc.dart';
@@ -137,6 +138,11 @@ class _ContactSectionWidgetState extends State<ContactSectionWidget> {
                       CustomTextField(
                         controller: mobilenumcontroller,
                         hint: "Phone Number",
+                        keyboardType: TextInputType.phone,
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly,
+                          LengthLimitingTextInputFormatter(10), // Optional
+                        ],
                       ),
 
                       const SizedBox(height: 20),
