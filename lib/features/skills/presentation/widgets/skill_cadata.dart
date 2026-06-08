@@ -21,7 +21,7 @@ const List<SkillCategoryData> skillCategories = [
     title: 'Frontend Dev',
     icon: Icons.code_rounded,
     accent: Color(0xFF38BDF8),
-    skills: ['Flutter', 'Dart'],
+    skills: ['Flutter', 'Dart' , 'Android', 'iOS'],
   ),
   SkillCategoryData(
     title: 'State Management',

@@ -3,7 +3,7 @@ name: Deploy Flutter Web
 on:
   push:
     branches:
-      - main
+      - responsive_device
 
 permissions:
   contents: write

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 // as of now it created later when using cloud function, but later we can move it to a separate
@@ -34,6 +35,9 @@ $message
       body: {'chat_id': chatId, 'text': text},
     );
 
+    debugPrint("Status: ${response.statusCode}");
+    debugPrint("Body: ${response.body}");
+
     if (response.statusCode != 200) {
       throw Exception('Failed to send message');
     }
@@ -48,7 +52,7 @@ class EmailService {
     required String subject,
     required String message,
   }) async {
-    await http.post(
+    final response = await http.post(
       Uri.parse('https://api.emailjs.com/api/v1.0/email/send'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({
@@ -64,5 +68,12 @@ class EmailService {
         },
       }),
     );
+
+    print('STATUS CODE : ${response.statusCode}');
+    print('BODY : ${response.body}');
+
+    if (response.statusCode != 200) {
+      throw Exception('EmailJS Error: ${response.statusCode} ${response.body}');
+    }
   }
 }

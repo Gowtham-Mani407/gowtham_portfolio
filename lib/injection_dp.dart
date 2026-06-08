@@ -1,5 +1,4 @@
 import 'package:get_it/get_it.dart';
-import 'package:gowtham_portfolio/features/contact/data/repositories/contact_repo_impl.dart';
 import 'package:gowtham_portfolio/features/contact/data/repositories/contact_repository.dart';
 
 import 'features/contact/presentation/bloc/contact_bloc.dart';
