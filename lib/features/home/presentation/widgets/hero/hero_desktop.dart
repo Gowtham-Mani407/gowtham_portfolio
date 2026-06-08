@@ -40,7 +40,7 @@ class HeroDesktop extends StatelessWidget {
           /// Faded Full Background Photo
           Positioned.fill(
             child: Opacity(
-              opacity: 0.08,
+              opacity: .08,
               child: Image.asset('assets/my_pichalf.jpeg', fit: BoxFit.cover),
             ),
           ),
