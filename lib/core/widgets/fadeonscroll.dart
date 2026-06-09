@@ -3,11 +3,9 @@ import 'package:visibility_detector/visibility_detector.dart';
 
 class FadeInOnScroll extends StatefulWidget {
   final Widget child;
+  final String id;
 
-  const FadeInOnScroll({
-    super.key,
-    required this.child,
-  });
+  const FadeInOnScroll({super.key, required this.child, required this.id});
 
   @override
   State<FadeInOnScroll> createState() => _FadeInOnScrollState();
@@ -30,12 +28,17 @@ class _FadeInOnScrollState extends State<FadeInOnScroll>
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return VisibilityDetector(
-      key: UniqueKey(),
+      key: Key(widget.id),
       onVisibilityChanged: (info) {
-        if (!hasAnimated &&
-            info.visibleFraction > 0.15) {
+        if (!hasAnimated && info.visibleFraction > 0.15) {
           hasAnimated = true;
           _controller.forward();
         }
@@ -46,10 +49,7 @@ class _FadeInOnScrollState extends State<FadeInOnScroll>
           return Opacity(
             opacity: _controller.value,
             child: Transform.translate(
-              offset: Offset(
-                0,
-                50 * (1 - _controller.value),
-              ),
+              offset: Offset(0, 50 * (1 - _controller.value)),
               child: child,
             ),
           );

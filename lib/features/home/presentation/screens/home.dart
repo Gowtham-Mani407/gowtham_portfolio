@@ -112,25 +112,37 @@ class _HomeScreenState extends State<HomeScreen>
             Container(
               key: aboutKey,
               color: const Color(0xFF0B1120),
-              child: FadeInOnScroll(child: const AboutSectionWidget()),
+              child: FadeInOnScroll(
+                id: 'about',
+                child: const AboutSectionWidget(),
+              ),
             ),
 
             Container(
               key: skillsKey,
               color: const Color(0xFF0B1120),
-              child: FadeInOnScroll(child: const SkillsSectionWidget()),
+              child: FadeInOnScroll(
+                id: 'skills',
+                child: const SkillsSectionWidget(),
+              ),
             ),
 
             Container(
               key: projectsKey,
               color: const Color(0xFF0B1120),
-              child: FadeInOnScroll(child: const ProjectsSectionWidget()),
+              child: FadeInOnScroll(
+                id: 'projects',
+                child: const ProjectsSectionWidget(),
+              ),
             ),
 
             Container(
               key: contactKey,
               color: const Color(0xFF0B1120),
-              child: FadeInOnScroll(child: const ContactSectionWidget()),
+              child: FadeInOnScroll(
+                id: 'contact',
+                child: const ContactSectionWidget(),
+              ),
             ),
           ],
         ),
