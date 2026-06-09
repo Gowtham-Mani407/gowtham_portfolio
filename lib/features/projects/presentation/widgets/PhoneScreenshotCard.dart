@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gowtham_portfolio/core/responsive/responsive.dart';
 
 class PhoneScreenshotCard extends StatefulWidget {
   final String imagePath;
@@ -24,7 +25,7 @@ class PhoneScreenshotCardState extends State<PhoneScreenshotCard> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 250),
         transform: Matrix4.translationValues(0, isHovered ? -12 : 0, 0),
-        width: 220,
+        width: Responsive.isMobile(context) ? 140 : 220,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
           boxShadow: [

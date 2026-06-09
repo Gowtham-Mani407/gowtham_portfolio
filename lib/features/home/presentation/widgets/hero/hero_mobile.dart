@@ -5,16 +5,13 @@ import 'package:gowtham_portfolio/core/utils/scrollhelper.dart';
 import 'package:gowtham_portfolio/features/home/data/porfolioservice.dart';
 import 'package:gowtham_portfolio/features/home/presentation/screens/home.dart';
 
-
 class HeroMobile extends StatelessWidget {
   const HeroMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints(
-        minHeight: 750,
-      ),
+      constraints: const BoxConstraints(minHeight: 750),
       child: Stack(
         children: [
           /// Background Gradient
@@ -38,10 +35,7 @@ class HeroMobile extends StatelessWidget {
           Positioned.fill(
             child: Opacity(
               opacity: .08,
-              child: Image.asset(
-                'assets/my_pichalf.jpeg',
-                fit: BoxFit.cover,
-              ),
+              child: Image.asset('assets/my_pichalf.jpeg', fit: BoxFit.cover),
             ),
           ),
 
@@ -86,30 +80,23 @@ class HeroMobile extends StatelessWidget {
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(
-                              0xFF38BDF8,
-                            ).withOpacity(.4),
+                            color: const Color(0xFF38BDF8).withOpacity(.4),
                             blurRadius: 80,
                             spreadRadius: 10,
                           ),
                         ],
                       ),
                     ),
-            
+
                     Pulse(
                       infinite: false,
-                      duration: const Duration(
-                        seconds: 2,
-                      ),
+                      duration: const Duration(seconds: 2),
                       child: Container(
                         width: 220,
                         height: 220,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.white24,
-                            width: 3,
-                          ),
+                          border: Border.all(color: Colors.white24, width: 3),
                         ),
                         child: ClipOval(
                           child: Image.asset(
@@ -121,19 +108,16 @@ class HeroMobile extends StatelessWidget {
                     ),
                   ],
                 ),
-            
+
                 const SizedBox(height: 35),
-            
+
                 const Text(
                   "Hello, I'm 👋",
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 16,
-                  ),
+                  style: TextStyle(color: Colors.white70, fontSize: 16),
                 ),
-            
+
                 const SizedBox(height: 12),
-            
+
                 FadeInDown(
                   child: const Text(
                     "Gowtham Mani",
@@ -145,9 +129,9 @@ class HeroMobile extends StatelessWidget {
                     ),
                   ),
                 ),
-            
+
                 const SizedBox(height: 10),
-            
+
                 FadeInDown(
                   child: const Text(
                     "Flutter Developer",
@@ -159,9 +143,9 @@ class HeroMobile extends StatelessWidget {
                     ),
                   ),
                 ),
-            
+
                 const SizedBox(height: 20),
-            
+
                 const Text(
                   "I build scalable mobile and web applications using Flutter, Clean Architecture, MVC and BLoC. Passionate about creating clean UI, maintainable code and exceptional user experiences.",
                   textAlign: TextAlign.center,
@@ -171,93 +155,81 @@ class HeroMobile extends StatelessWidget {
                     height: 1.8,
                   ),
                 ),
-            
+
                 const SizedBox(height: 35),
-            
+
                 /// BUTTONS
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF38BDF8),
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 16,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF38BDF8),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
                       ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                    ),
-                    onPressed: () async {
-                      final url =
-                          await PortfolioService().getResumeUrl();
-            
-                      html.window.open(url, '_blank');
-                    },
-                    icon: const Icon(
-                      Icons.visibility_outlined,
-                    ),
-                    label: const Text(
-                      "View Resume",
+                      onPressed: () async {
+                        final url = await PortfolioService().getResumeUrl();
+
+                        html.window.open(url, '_blank');
+                      },
+                      icon: const Icon(Icons.visibility_outlined),
+                      label: const Text("View Resume"),
                     ),
                   ),
                 ),
-            
+
                 const SizedBox(height: 15),
-            
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF0EA5E9),
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 16,
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF0EA5E9),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
                       ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                    ),
-                    onPressed: () async {
-                      final url = await PortfolioService()
-                          .getResumedowloadUrl();
-            
-                      html.window.open(url, '_self');
-                    },
-                    icon: const Icon(
-                      Icons.download_rounded,
-                    ),
-                    label: const Text(
-                      "Download Resume",
+                      onPressed: () async {
+                        final url = await PortfolioService()
+                            .getResumedowloadUrl();
+
+                        html.window.open(url, '_self');
+                      },
+                      icon: const Icon(Icons.download_rounded),
+                      label: const Text("Download Resume"),
                     ),
                   ),
                 ),
-            
+
                 const SizedBox(height: 15),
-            
-                SizedBox(
-                  width: double.infinity,
-                  child: OutlinedButton.icon(
-                    style: OutlinedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      side: const BorderSide(
-                        color: Colors.white30,
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton.icon(
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        side: const BorderSide(color: Colors.white30),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
                       ),
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 16,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                    ),
-                    onPressed: () {
-                      ScrollHelper.scrollTo(contactKey);
-                    },
-                    icon: const Icon(
-                      Icons.mail_outline,
-                    ),
-                    label: const Text(
-                      "Contact Me",
+                      onPressed: () {
+                        ScrollHelper.scrollTo(contactKey);
+                      },
+                      icon: const Icon(Icons.mail_outline),
+                      label: const Text("Contact Me"),
                     ),
                   ),
                 ),

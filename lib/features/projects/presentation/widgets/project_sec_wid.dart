@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gowtham_portfolio/core/responsive/responsive.dart';
 import 'package:gowtham_portfolio/features/projects/data/projectmodel.dart';
 import 'package:gowtham_portfolio/features/projects/presentation/widgets/project_card_wid.dart';
-
 
 class ProjectsSectionWidget extends StatelessWidget {
   const ProjectsSectionWidget({super.key});
@@ -28,7 +28,7 @@ class ProjectsSectionWidget extends StatelessWidget {
           "Webhooks",
           "YouTube",
           "IAP",
-          "Getx"
+          "Getx",
         ],
       ),
       ProjectModel(
@@ -41,7 +41,7 @@ class ProjectsSectionWidget extends StatelessWidget {
           "SignalR",
           "REST API",
           "Geolocator",
-          "Provider"
+          "Provider",
         ],
       ),
       ProjectModel(
@@ -49,20 +49,15 @@ class ProjectsSectionWidget extends StatelessWidget {
         description:
             "Matrimony platform with profile matching, search filters, interests and preference-based recommendations.",
         images: [],
-        technologies: [
-          "Flutter",
-          "Firebase",
-          "REST API",
-          "BLoC",
-        ],
+        technologies: ["Flutter", "Firebase", "REST API", "BLoC"],
       ),
     ];
 
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 100,
-        vertical: 100,
+      padding: EdgeInsets.symmetric(
+        horizontal: Responsive.isMobile(context) ? 20 : 100,
+        vertical: Responsive.isMobile(context) ? 60 : 100,
       ),
       color: const Color(0xFF0B1120),
       child: Column(
@@ -93,10 +88,7 @@ class ProjectsSectionWidget extends StatelessWidget {
           const Text(
             "Some of the applications I've worked on professionally.",
             textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: 18,
-            ),
+            style: TextStyle(color: Colors.white70, fontSize: 18),
           ),
 
           const SizedBox(height: 70),
@@ -104,9 +96,7 @@ class ProjectsSectionWidget extends StatelessWidget {
           ...projects.map(
             (project) => Padding(
               padding: const EdgeInsets.only(bottom: 60),
-              child: ProjectCardWidget(
-                project: project,
-              ),
+              child: ProjectCardWidget(project: project),
             ),
           ),
         ],
