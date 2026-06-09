@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gowtham_portfolio/core/responsive/responsive.dart';
 import 'package:gowtham_portfolio/core/widgets/fadeonscroll.dart';
 import 'package:gowtham_portfolio/features/about/presentation/widgets/aboutsectionwid.dart';
 import 'package:gowtham_portfolio/features/contact/presentation/widgets/contact_sec_wid.dart';
@@ -76,15 +77,37 @@ class _HomeScreenState extends State<HomeScreen>
         controller: _scrollController,
         child: Column(
           children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height,
-              child: const Stack(
-                children: [
-                  HeroSectionWidget(),
-                  Positioned(top: 0, left: 0, right: 0, child: NavbarWidget()),
-                ],
-              ),
-            ),
+            Responsive.isMobile(context)
+                ? ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: MediaQuery.of(context).size.height,
+                    ),
+                    child: Stack(
+                      children: [
+                        HeroSectionWidget(),
+                        const Positioned(
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          child: NavbarWidget(),
+                        ),
+                      ],
+                    ),
+                  )
+                : SizedBox(
+                    height: MediaQuery.of(context).size.height,
+                    child: const Stack(
+                      children: [
+                        HeroSectionWidget(),
+                        Positioned(
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          child: NavbarWidget(),
+                        ),
+                      ],
+                    ),
+                  ),
 
             Container(
               key: aboutKey,
