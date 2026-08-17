@@ -35,7 +35,13 @@ class ProjectsSectionWidget extends StatelessWidget {
         title: "SMART SORT",
         description:
             "Waste pickup application with real-time tracking using SignalR and Geolocator.",
-        images: ["assets/S1.png", "assets/S4.png" ,"assets/S5.png","assets/S2.png", "assets/S3.png"],
+        images: [
+          "assets/S1.jpg",
+          "assets/S4.jpeg",
+          "assets/S5.jpeg",
+          "assets/S2.jpg",
+          "assets/S3.jpg",
+        ],
         technologies: [
           "Flutter",
           "SignalR",
@@ -49,13 +55,13 @@ class ProjectsSectionWidget extends StatelessWidget {
         description:
             "Matrimony platform with profile matching, search filters, interests and preference-based recommendations.",
         images: [
-          "assets/M6.png",
-          "assets/M1.png",
-          "assets/M2.png",
-          "assets/M3.png",
-          "assets/M4.png",
-          "assets/M7.png",
-          "assets/M8.png",
+          "assets/M6.jpg",
+          "assets/M1.jpeg",
+          "assets/M2.jpeg",
+          "assets/M3.jpeg",
+          "assets/M4.jpeg",
+          "assets/M7.jpeg",
+          "assets/M8.jpeg",
         ],
         technologies: ["Flutter", "Firebase", "REST API", "BLoC"],
       ),

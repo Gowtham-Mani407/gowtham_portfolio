@@ -38,7 +38,14 @@ class PhoneScreenshotCardState extends State<PhoneScreenshotCard> {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(25),
-          child: Image.asset(widget.imagePath, fit: BoxFit.cover),
+          child: Image.asset(
+            widget.imagePath,
+            fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) => Container(
+              color: Colors.white10,
+              child: const Icon(Icons.broken_image, color: Colors.white38),
+            ),
+          ),
         ),
       ),
     );

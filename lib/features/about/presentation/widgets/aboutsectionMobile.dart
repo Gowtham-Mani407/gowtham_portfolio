@@ -85,7 +85,7 @@ class AboutSectionMobile extends StatelessWidget {
             runSpacing: 10,
             children: [
               SkillChip("Clean Architecture"),
-              SkillChip("BLoC"),
+              SkillChip("State Management"),
               SkillChip("REST APIs"),
               SkillChip("Flutter Web"),
               SkillChip("Native App"),
