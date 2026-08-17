@@ -134,7 +134,7 @@ class HeroMobile extends StatelessWidget {
 
                 FadeInDown(
                   child: const Text(
-                    "Flutter Developer",
+                    "Mobile App Developer",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 22,

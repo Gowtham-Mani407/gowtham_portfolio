@@ -57,7 +57,7 @@ class AboutSectionMobile extends StatelessWidget {
           const SizedBox(height: 30),
 
           const CommonText(
-            "Flutter Developer 🚀",
+            "Mobile App Developer - Android + iOS 🚀",
             textalign: TextAlign.center,
             style: TextStyle(
               color: Colors.white,
@@ -69,7 +69,7 @@ class AboutSectionMobile extends StatelessWidget {
           const SizedBox(height: 16),
 
           CommonText(
-            "I'm Gowtham Mani, a Flutter Developer passionate about creating high-quality mobile and web applications. I enjoy building scalable solutions using Clean Architecture, MVC, BLoC, REST APIs, and Firebase while focusing on performance and user experience.",
+            "I'm Gowtham Mani, a Mobile Application Developer passionate about creating high-quality mobile and web applications. I enjoy building scalable solutions using Clean Architecture, MVC, MVVM , BLoC, Provider, REST APIs, and Firebase while focusing on performance and user experience.",
             textalign: TextAlign.center,
             style: AppTextStyles.body.copyWith(
               color: Colors.white70,
@@ -88,6 +88,8 @@ class AboutSectionMobile extends StatelessWidget {
               SkillChip("BLoC"),
               SkillChip("REST APIs"),
               SkillChip("Flutter Web"),
+              SkillChip("Native App"),
+              SkillChip("Flutter App"),
               SkillChip("Firebase"),
             ],
           ),

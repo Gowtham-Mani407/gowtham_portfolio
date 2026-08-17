@@ -23,9 +23,9 @@ class AboutSectionDesktop extends StatelessWidget {
               letterSpacing: 2,
             ),
           ),
-    
+
           const SizedBox(height: 16),
-    
+
           const CommonText(
             "Building Reliable Digital Experiences",
             style: TextStyle(
@@ -34,9 +34,9 @@ class AboutSectionDesktop extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-    
+
           const SizedBox(height: 60),
-    
+
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -53,7 +53,7 @@ class AboutSectionDesktop extends StatelessWidget {
                       fit: StackFit.expand,
                       children: [
                         Image.asset("assets/my_pic.jpeg", fit: BoxFit.cover),
-    
+
                         Container(
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
@@ -71,9 +71,9 @@ class AboutSectionDesktop extends StatelessWidget {
                   ),
                 ),
               ),
-    
+
               const SizedBox(width: 60),
-    
+
               /// Right Content
               Expanded(
                 flex: 2,
@@ -81,43 +81,53 @@ class AboutSectionDesktop extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const CommonText(
-                      "Flutter Developer 🚀",
+                      "Mobile App Developer - Android + iOS 🚀",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-    
+
                     const SizedBox(height: 20),
-    
+
                     CommonText(
-                      "I'm Gowtham Mani, a Flutter Developer passionate about creating high-quality mobile and web applications. I enjoy building scalable solutions using Clean Architecture, MVC, BLoC, REST APIs, and Firebase while focusing on performance and user experience.",
+                      "I'm Gowtham Mani, a Mobile Application Developer passionate about creating high-quality mobile and web applications. I enjoy building scalable solutions using Clean Architecture, MVC, MVVM , BLoC, Provider, REST APIs, and Firebase while focusing on performance and user experience.",
                       style: AppTextStyles.body.copyWith(color: Colors.white70),
                     ),
-    
+
                     const SizedBox(height: 30),
-    
+
                     const _HighlightTile(
                       icon: Icons.check_circle,
                       title: "Clean Architecture",
                     ),
-    
+
                     const _HighlightTile(
                       icon: Icons.check_circle,
-                      title: "BLoC State Management",
+                      title: "State Management",
                     ),
-    
+
                     const _HighlightTile(
                       icon: Icons.check_circle,
                       title: "REST API Integration",
                     ),
-    
+
                     const _HighlightTile(
                       icon: Icons.check_circle,
                       title: "Flutter Web Development",
                     ),
-    
+
+                    const _HighlightTile(
+                      icon: Icons.check_circle,
+                      title: "Native App Development",
+                    ),
+
+                    const _HighlightTile(
+                      icon: Icons.check_circle,
+                      title: "Flutter App Development",
+                    ),
+
                     const _HighlightTile(
                       icon: Icons.check_circle,
                       title: "Firebase Services",
@@ -127,19 +137,19 @@ class AboutSectionDesktop extends StatelessWidget {
               ),
             ],
           ),
-    
+
           const SizedBox(height: 80),
-    
+
           /// Stats
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: const [
               StatCard(value: "3.5+", title: "Years Experience"),
-    
+
               StatCard(value: "3+", title: "Production Apps"),
-    
+
               StatCard(value: "3", title: "Companies"),
-    
+
               StatCard(value: "100%", title: "Passion"),
             ],
           ),
