@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gowtham_portfolio/core/responsive/responsive.dart';
+import 'package:gowtham_portfolio/core/widgets/fadeonscroll.dart';
 import 'package:gowtham_portfolio/features/projects/data/projectmodel.dart';
 import 'package:gowtham_portfolio/features/projects/presentation/widgets/project_card_wid.dart';
 
@@ -37,8 +38,8 @@ class ProjectsSectionWidget extends StatelessWidget {
             "Waste pickup application with real-time tracking using SignalR and Geolocator.",
         images: [
           "assets/S1.jpg",
-          "assets/S4.jpeg",
-          "assets/S5.jpeg",
+          "assets/S4.jpg",
+          "assets/S5.jpg",
           "assets/S2.jpg",
           "assets/S3.jpg",
         ],
@@ -107,10 +108,19 @@ class ProjectsSectionWidget extends StatelessWidget {
 
           const SizedBox(height: 70),
 
+          // ...projects.map(
+          //   (project) => Padding(
+          //     padding: const EdgeInsets.only(bottom: 60),
+          //     child: ProjectCardWidget(project: project),
+          //   ),
+          // ),
           ...projects.map(
             (project) => Padding(
               padding: const EdgeInsets.only(bottom: 60),
-              child: ProjectCardWidget(project: project),
+              child: FadeInOnScroll(
+                id: 'project-${project.title}',
+                child: ProjectCardWidget(project: project),
+              ),
             ),
           ),
         ],

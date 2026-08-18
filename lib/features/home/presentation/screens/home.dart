@@ -127,13 +127,18 @@ class _HomeScreenState extends State<HomeScreen>
               ),
             ),
 
+            // Container(
+            //   key: projectsKey,
+            //   color: const Color(0xFF0B1120),
+            //   child: FadeInOnScroll(
+            //     id: 'projects',
+            //     child: const ProjectsSectionWidget(),
+            //   ),
+            // ),
             Container(
               key: projectsKey,
               color: const Color(0xFF0B1120),
-              child: FadeInOnScroll(
-                id: 'projects',
-                child: const ProjectsSectionWidget(),
-              ),
+              child: const ProjectsSectionWidget(),
             ),
 
             Container(
