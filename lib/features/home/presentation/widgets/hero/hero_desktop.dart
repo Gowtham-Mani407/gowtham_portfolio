@@ -119,7 +119,7 @@ class HeroDesktop extends StatelessWidget {
                       SizedBox(
                         width: screenWidth * .4,
                         child: CommonText(
-                          "I build scalable mobile and web applications using Flutter, Clean Architecture, MVC and BLoC. Passionate about creating clean UI, maintainable code and exceptional user experiences.",
+                          "I build scalable mobile and web applications across native and cross-platform technologies, with expertise in Android, Flutter, Dart, Java, Kotlin, Clean Architecture, MVC, MVVM ,and BLoC. Passionate about creating clean UI, maintainable code, and exceptional user experiences.",
                           style: AppTextStyles.body.copyWith(
                             color: Colors.white70,
                             height: 1.8,

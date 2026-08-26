@@ -48,7 +48,7 @@ class AboutSectionMobile extends StatelessWidget {
               height: 280,
               width: double.infinity,
               child: Image.asset(
-                "assets/my_pic.jpeg",
+                "assets/gm_candid.jpeg",
                 fit: BoxFit.cover,
               ),
             ),

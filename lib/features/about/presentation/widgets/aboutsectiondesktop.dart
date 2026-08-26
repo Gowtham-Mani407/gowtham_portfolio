@@ -52,18 +52,18 @@ class AboutSectionDesktop extends StatelessWidget {
                     child: Stack(
                       fit: StackFit.expand,
                       children: [
-                        Image.asset("assets/my_pic.jpeg", fit: BoxFit.cover),
+                        Image.asset("assets/gm_candid.jpeg", fit: BoxFit.cover),
 
                         Container(
                           decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
-                              colors: [
-                                Colors.black.withOpacity(0.6),
-                                Colors.transparent,
-                              ],
-                            ),
+                            // gradient: LinearGradient(
+                            //   begin: Alignment.centerLeft,
+                            //   end: Alignment.centerRight,
+                            //   colors: [
+                            //     Colors.black.withOpacity(0.3),
+                            //     Colors.transparent,
+                            //   ],
+                            // ),
                           ),
                         ),
                       ],
